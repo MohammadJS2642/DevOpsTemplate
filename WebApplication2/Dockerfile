@@ -7,8 +7,8 @@ EXPOSE 4430
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["WebApplication2/nuget.config", "WebApplication2/"]
-COPY ["WebApplication2/WebApplication2.csproj", "WebApplication2/"]
+COPY ["nuget.config", "WebApplication2/"]
+COPY ["WebApplication2.csproj", "WebApplication2/"]
 RUN dotnet restore "WebApplication2/WebApplication2.csproj"
 COPY . .
 WORKDIR "/src/WebApplication2"
