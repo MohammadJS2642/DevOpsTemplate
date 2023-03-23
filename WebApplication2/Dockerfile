@@ -10,9 +10,10 @@ WORKDIR /src
 COPY ["nuget.config", "WebApplication2/"]
 COPY ["WebApplication2.csproj", "WebApplication2/"]
 COPY . WebApplication2
-RUN dotnet nuget add source --username MohammadJS2642 --store-password-in-clear-text --configfile nuget.config -p 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  --name github "https://nuget.pkg.github.com/MohammadJS2642/index.json"
+RUN ["cp", "WebApplication2/NuGet.Config", "/root/.nuget/NuGet/NuGet.Config"]
+#RUN dotnet nuget add source --username MohammadJS2642 --store-password-in-clear-text --configfile "WebApplication2/nuget.config" -p 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  --name github "https://nuget.pkg.github.com/MohammadJS2642/index.json"
 RUN dotnet nuget list source
-RUN dotnet restore --verbosity n --configfile "WebApplication2/nuget.config" "WebApplication2/WebApplication2.csproj"
+RUN dotnet restore "WebApplication2/WebApplication2.csproj"
 WORKDIR "/src/WebApplication2"
 RUN dotnet build "WebApplication2.csproj" -c Release -o /app/build
 
