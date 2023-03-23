@@ -10,7 +10,8 @@ WORKDIR /src
 COPY ["nuget.config", "WebApplication2/"]
 COPY ["WebApplication2.csproj", "WebApplication2/"]
 COPY . WebApplication2
-RUN dotnet restore --configfile "WebApplication2/nuget.config" "WebApplication2/WebApplication2.csproj"
+RUN dotnet restore --verbosity --configfile "WebApplication2/nuget.config" "WebApplication2/WebApplication2.csproj"
+RUN dotnet nuget list source
 WORKDIR "/src/WebApplication2"
 RUN dotnet build "WebApplication2.csproj" -c Release -o /app/build
 
