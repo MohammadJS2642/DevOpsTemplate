@@ -14,7 +14,7 @@ COPY . WebApplication2
 RUN ["cp", "-f", "WebApplication2/nuget.config", "/root/.nuget/NuGet/NuGet.Config"]
 #RUN dotnet nuget add source --username MohammadJS2642 --store-password-in-clear-text --configfile "WebApplication2/nuget.config" -p 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  --name github "https://nuget.pkg.github.com/MohammadJS2642/index.json"
 RUN dotnet nuget list source
-RUN dotnet restore "WebApplication2/WebApplication2.csproj"
+RUN dotnet restore --configfile "WebApplication2/nuget.config" "WebApplication2/WebApplication2.csproj"
 WORKDIR "/src/WebApplication2"
 RUN dotnet build "WebApplication2.csproj" -c Release -o /app/build
 
