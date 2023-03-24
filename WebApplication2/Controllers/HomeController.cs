@@ -16,8 +16,8 @@ namespace WebApplication2.Controllers
 
         public IActionResult Index()
         {
-            var text = MyPackageDevelopment.MyPackageDevelopment.SomeText();
-            ViewData["text"] = text;
+            //var text = MyPackageDevelopment.MyPackageDevelopment.SomeText();
+            //ViewData["text"] = text;
             return View();
         }
 
