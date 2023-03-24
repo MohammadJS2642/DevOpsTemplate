@@ -19,6 +19,7 @@ jobs:
     #  run: |
     #      dotnet nuget add source --username MohammadJS2642  --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/MohammadJS2642/index.json"
     - name: Build the Docker image
+      context: ./WebApplication2
       working-directory: ./WebApplication2
       run: docker build ./ --file Dockerfile --tag my-image-name:$(date +%s)
       #run: ls
