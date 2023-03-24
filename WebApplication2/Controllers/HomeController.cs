@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using WebApplication2.Models;
-//using MyPackageDevelopment;
+using package = MyPackageDevelopment;
 
 namespace WebApplication2.Controllers
 {
@@ -16,8 +16,8 @@ namespace WebApplication2.Controllers
 
         public IActionResult Index()
         {
-            //var text = MyPackageDevelopment.MyPackageDevelopment.SomeText();
-            //ViewData["text"] = text;
+            var text = package.MyPackageDevelopment.SomeText();
+            ViewData["text"] = text;
             return View();
         }
 

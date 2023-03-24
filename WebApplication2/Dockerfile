@@ -6,7 +6,7 @@ WORKDIR /app
 EXPOSE 4430
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-ENV PASS=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
+ENV PASS=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
 ENV USERNAME=MohammadJS2642
 ENV URL="https://nuget.pkg.github.com/MohammadJS2642/index.json"
 WORKDIR /src
