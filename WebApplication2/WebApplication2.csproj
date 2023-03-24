@@ -10,11 +10,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <None Remove="nuget.config.template" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Content Include="nuget.config.template" />
+		<Content Include="nuget.config.template" />
 	</ItemGroup>
 
 	<ItemGroup>
