@@ -13,9 +13,6 @@ WORKDIR /src
 COPY ["WebApplication2.csproj", "WebApplication2/"]
 COPY . WebApplication2
 COPY ["nuget.config.template", "WebApplication2/nuget.config"]
-RUN ["cat", "WebApplication2/nuget.config"]
-#RUN ["ls", "/root/.nuget/NuGet/NuGet.Config"]
-#RUN ["cp", "-f", "WebApplication2/nuget.config", "/root/.nuget/NuGet/NuGet.Config"]
 RUN dotnet nuget add source --username $USERNAME --store-password-in-clear-text --configfile "WebApplication2/nuget.config" -p $PASS  --name github $URL
 RUN dotnet nuget list source
 RUN dotnet restore --configfile "WebApplication2/nuget.config" "WebApplication2/WebApplication2.csproj"
