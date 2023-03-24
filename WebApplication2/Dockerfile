@@ -12,7 +12,7 @@ ENV URL="https://nuget.pkg.github.com/MohammadJS2642/index.json"
 WORKDIR /src
 COPY ["WebApplication2.csproj", "WebApplication2/"]
 COPY . WebApplication2
-COPY ["WebApplication2/nuget.config.template", "WebApplication2/nuget.config"]
+COPY ["nuget.config.template", "WebApplication2/nuget.config"]
 RUN ["cat", "WebApplication2/nuget.config"]
 #RUN ["ls", "/root/.nuget/NuGet/NuGet.Config"]
 #RUN ["cp", "-f", "WebApplication2/nuget.config", "/root/.nuget/NuGet/NuGet.Config"]
