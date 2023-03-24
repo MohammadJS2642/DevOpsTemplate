@@ -10,6 +10,7 @@ ENV PASS=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
 ENV USERNAME=MohammadJS2642
 ENV URL="https://nuget.pkg.github.com/MohammadJS2642/index.json"
 WORKDIR /src
+RUN ["rm", "WebApplication2/nuget.config"]
 COPY ["nuget.config.template", "WebApplication2/nuget.config"]
 COPY ["WebApplication2.csproj", "WebApplication2/"]
 COPY . WebApplication2
