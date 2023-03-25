@@ -6,7 +6,7 @@ EXPOSE 8000
 #EXPOSE 4430
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-ENV PASS=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
+ENV PASS=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
 ENV USERNAME=MohammadJS2642
 ENV URL="https://nuget.pkg.github.com/MohammadJS2642/index.json"
 WORKDIR /src
