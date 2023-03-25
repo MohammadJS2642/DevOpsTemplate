@@ -14,11 +14,4 @@
 		<PackageReference Include="MyPackageDevelopmentPackage" Version="0.1.30" />
 	</ItemGroup>
 
-	<PropertyGroup>
-		<PackageId>DevOps</PackageId>
-		<RepositoryType>git</RepositoryType>
-		<RepositoryUrl>https://github.com/MohammadJS2642/MyPackageDevelopment.git</RepositoryUrl>
-	</PropertyGroup>
-
-
 </Project>

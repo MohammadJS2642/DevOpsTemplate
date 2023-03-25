@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [ "master" ]
 
+env:
+  USERNAME: MohammadJS2642
+  PASS: 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
+  URL: https://nuget.pkg.github.com/MohammadJS2642/index.json
+
 jobs:
 
   build:
@@ -14,6 +19,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
+    - name: Add Dependencies
+      working-directory: ./WebApplication2
+      run: dotnet nuget add source --username ${{ env.USERNAME }} --store-password-in-clear-text --configfile "nuget.config" -p ${{ env.PASS }}  --name github ${{ env.URL }}
+
     - name: Build the Docker image
       working-directory: ./WebApplication2
       run: docker build ./ --file Dockerfile --tag my-image-name:$(date +%s)
