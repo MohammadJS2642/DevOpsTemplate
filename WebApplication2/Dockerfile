@@ -10,7 +10,7 @@ ENV PASS=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
 ENV USERNAME=MohammadJS2642
 ENV URL="https://nuget.pkg.github.com/MohammadJS2642/index.json"
 WORKDIR /src
-#COPY ["WebApplication2.csproj", "WebApplication2/WebApplication2.csproj"]
+COPY ["WebApplication2.csproj", "WebApplication2/WebApplication2.csproj"]
 COPY . /WebApplication2
 #COPY ["nuget.config.template", "WebApplication2/nuget.config"]
 #RUN dotnet nuget add source --username $USERNAME --store-password-in-clear-text --configfile "WebApplication2/nuget.config" -p $PASS  --name github $URL
