@@ -20,9 +20,13 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Add Dependencies
+    #- name: Add Dependencies
+    #  working-directory: ./WebApplication2
+    #  run: dotnet nuget add source --username ${{ env.USERNAME }} --store-password-in-clear-text --configfile "nuget.config" -p ${{ env.PASS }}  --name github ${{ env.URL }}
+
+    - name: Add Packages
       working-directory: ./WebApplication2
-      run: dotnet nuget add source --username ${{ env.USERNAME }} --store-password-in-clear-text --configfile "nuget.config" -p ${{ env.PASS }}  --name github ${{ env.URL }}
+      run: dotnet add "WebApplication2/WebApplication2.csproj" package MyPackageDevelopmentPackage --version 0.1.30
 
     - name: Build the Docker image
       working-directory: ./WebApplication2
