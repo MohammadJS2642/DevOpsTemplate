@@ -9,7 +9,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["nuget.config", "~/.nuget/NuGet/NuGet.config"]
 COPY ["WebApplication2.csproj", "WebApplication2/"]
-RUN cat "WebApplication2/WebApplication2.csproj"
+RUN dotnet nuget list source
 RUN dotnet restore "WebApplication2/WebApplication2.csproj"
 COPY . .
 WORKDIR "/src/WebApplication2"
