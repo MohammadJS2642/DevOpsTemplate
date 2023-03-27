@@ -25,10 +25,13 @@ jobs:
       #working-directory: ./WebApplication2
       run: dotnet nuget list source
 
+    - name: enable nuget sources
+      run: dotnet nuget list source
+
     #- name: Add Packages
     #  working-directory: ./WebApplication2
     #  run: dotnet add "WebApplication2.csproj" package MyPackageDevelopmentPackage --version 0.1.30
 
     - name: Build the Docker image
       working-directory: ./
-      run: docker build ./WebApplication2 --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build ./WebApplication2 --file ./WebApplication2/Dockerfile --tag my-image-name:$(date +%s)
