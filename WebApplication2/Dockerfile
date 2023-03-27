@@ -10,7 +10,7 @@ WORKDIR /src
 #COPY ["nuget.config", "."]
 COPY ["packages.lock.json", "WebApplication2/"]
 COPY ["WebApplication2.csproj", "WebApplication2/"]
-RUN dotnet restore "WebApplication2/WebApplication2.csproj"  --locked-mode
+#RUN dotnet restore "WebApplication2/WebApplication2.csproj"  --locked-mode
 COPY . .
 WORKDIR "/src/WebApplication2"
 RUN dotnet build "WebApplication2.csproj" -c Release -o /app/build
