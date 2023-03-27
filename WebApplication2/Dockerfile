@@ -6,6 +6,8 @@ EXPOSE 80
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+WORKDIR ...
+COPY nuget.config /
 WORKDIR /src
 #COPY ["nuget.config", "~/.nuget/NuGet/NuGet.config"]
 COPY ["WebApplication2.csproj", "WebApplication2/"]
