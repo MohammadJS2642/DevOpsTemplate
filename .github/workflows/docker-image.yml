@@ -20,8 +20,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    #- name: copy to nuget
-    #  run: copy ./nuget.config root/.nuget/NuGet/NuGet.config
+    - name: copy to nuget
+      run: copy ./nuget.config ~/.nuget/NuGet/NuGet.config
     
     - name: enable nuget sources
       run: dotnet nuget list source
@@ -33,3 +33,4 @@ jobs:
     - name: Build the Docker image
       working-directory: ./
       run: docker build ./WebApplication2 --file ./WebApplication2/Dockerfile --tag my-image-name:$(date +%s)
+      #run: docker build ./WebApplication2 --file ./WebApplication2/Dockerfile --tag my-image-name:$(date +%s)
