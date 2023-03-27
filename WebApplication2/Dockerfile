@@ -5,14 +5,14 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM mcr.microsoft.comdotnet/sdk:6.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-#COPY ["nuget.config", "~/.nuget/NuGet/NuGet.config"]
-COPY ["WebApplication2.csproj", "WebApplication2/"]
-RUN dotnet restore "WebApplication2/WebApplication2.csproj"  --disable-parallel
+COPY ["nuget.config", "."]
+COPY ["WebApplication2/WebApplication2.csproj", "WebApplication2/"]
+RUN dotnet restore "WebApplication2/WebApplication2.csproj"
 COPY . .
 WORKDIR "/src/WebApplication2"
-RUN dotnet build "WebApplication2.csproj" -c Release -o /app/build --no-restore
+RUN dotnet build "WebApplication2.csproj" -c Release -o /app/build
 
 FROM build AS publish
 RUN dotnet publish "WebApplication2.csproj" -c Release -o /app/publish /p:UseAppHost=false
