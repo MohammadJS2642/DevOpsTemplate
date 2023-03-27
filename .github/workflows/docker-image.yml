@@ -20,6 +20,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: copy to nuget
+      run: copy ./nuget.config root/.nuget/NuGet/NuGet.config
     
     - name: Add Dependencies
       #working-directory: ./WebApplication2
