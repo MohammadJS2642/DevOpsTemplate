@@ -10,7 +10,7 @@ WORKDIR /src
 #COPY ["nuget.config", "."]
 COPY ["WebApplication2.csproj", "WebApplication2/"]
 RUN ["mkdir",  "-p", "~/.nuget/NuGet"]
-RUN ["cp", "./nuget.config", "~/.nuget/NuGet/NuGet.config"]
+RUN ["cp", "nuget.config", "~/.nuget/NuGet/NuGet.config"]
 RUN ["cat","~/.nuget/NuGet/NuGet.config"]
 RUN dotnet restore "WebApplication2/WebApplication2.csproj"
 COPY . .
