@@ -30,4 +30,5 @@ jobs:
 
     - name: Build the Docker image
       working-directory: WebApplication1_Solution
-      run: docker build ./ --file Dockerfile --tag my-image-name:$(date +%s)
+      run: ls
+      #run: docker build ./ --file Dockerfile --tag my-image-name:$(date +%s)
