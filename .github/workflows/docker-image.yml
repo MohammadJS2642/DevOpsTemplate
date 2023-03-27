@@ -21,7 +21,7 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: copy to nuget
-      run: copy ./nuget.config ~/.nuget/NuGet/NuGet.config
+      run: cp ./nuget.config ~/.nuget/NuGet/NuGet.config
     
     - name: enable nuget sources
       run: dotnet nuget list source
