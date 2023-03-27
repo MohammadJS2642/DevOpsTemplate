@@ -8,7 +8,7 @@ on:
 
 env:
   USERNAME: MohammadJS2642
-  PASS: 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
+  PASS: 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
   URL: https://nuget.pkg.github.com/MohammadJS2642/index.json
 
 jobs:
@@ -20,9 +20,21 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    
+    - name: Add Dependencies
+      #working-directory: ./WebApplication2
+      run: dotnet nuget list source
+
+    - name: ls
+      run: ls
+
+
     - name: Add Dependencies
       #working-directory: ./WebApplication2
       run: dotnet nuget add source --username ${{ env.USERNAME }} --store-password-in-clear-text -p ${{ env.PASS }}  --name github ${{ env.URL }}
+
+    - name: ls
+      run: ls
 
     #- name: Add Packages
     #  working-directory: ./WebApplication2
