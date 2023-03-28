@@ -31,6 +31,8 @@ jobs:
     #  run: dotnet add "WebApplication2.csproj" package MyPackageDevelopmentPackage --version 0.1.30
 
     - name: Build the Docker image
+      with:
+       secrets: "github_token=${{ secrets.GITHUB_TOKEN }}"
       working-directory: ./
       run: docker build ./WebApplication2 --file ./WebApplication2/Dockerfile --tag my-image-name:$(date +%s)
       #run: docker build ./WebApplication2 --file ./WebApplication2/Dockerfile --tag my-image-name:$(date +%s)
