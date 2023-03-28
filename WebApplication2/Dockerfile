@@ -18,7 +18,7 @@ COPY ["packages.lock.json", "WebApplication2/"]
 RUN dotnet nuget add source --username $USERNAME --store-password-in-clear-text -p $PASS  --name github $URL
 RUN dotnet nuget list source
 COPY ["WebApplication2.csproj", "WebApplication2/"]
-#RUN dotnet restore "WebApplication2/WebApplication2.csproj"  --locked-mode
+RUN dotnet restore "WebApplication2/WebApplication2.csproj"  --locked-mode -s $URL
 COPY . .
 WORKDIR "/src/WebApplication2"
 RUN dotnet build "WebApplication2.csproj" -c Release -o /app/build
