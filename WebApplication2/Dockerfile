@@ -9,18 +9,17 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 
-ENV PASS=MJs1378!
-#ENV PASS=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
+ENV PASS=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
 ENV USERNAME=MohammadJS2642
 ENV URL="https://nuget.pkg.github.com/MohammadJS2642/index.json"
 
 #COPY ["nuget.config", "."]
-COPY ["packages.lock.json", "WebApplication2/"]
+#COPY ["packages.lock.json", "WebApplication2/"]
+RUN dotnet nuget locals all --clear
 RUN dotnet nuget add source --username $USERNAME -p $PASS --store-password-in-clear-text --name github $URL
-#RUN dotnet nuget locals all --clear
 RUN dotnet nuget list source
 COPY ["WebApplication2.csproj", "WebApplication2/"]
-RUN dotnet restore "WebApplication2/WebApplication2.csproj"  --locked-mode
+RUN dotnet restore "WebApplication2/WebApplication2.csproj"
 COPY . .
 WORKDIR "/src/WebApplication2"
 RUN dotnet build "WebApplication2.csproj" -c Release -o /app/build
