@@ -20,8 +20,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: copy to nuget
-      run: mkdir -p ~/.nuget/NuGet && cp ./nuget.config ~/.nuget/NuGet/NuGet.config
+    #- name: copy to nuget
+    #  run: mkdir -p ~/.nuget/NuGet && cp ./nuget.config ~/.nuget/NuGet/NuGet.config
     
     - name: enable nuget sources
       run: dotnet nuget list source
