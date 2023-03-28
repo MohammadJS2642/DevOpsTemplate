@@ -19,9 +19,9 @@ RUN dotnet nuget locals all --clear
 RUN dotnet nuget add source --username $USERNAME -p $PASS --store-password-in-clear-text --name github $URL
 RUN dotnet nuget list source
 COPY ["WebApplication2.csproj", "WebApplication2/"]
-RUN dotnet restore "WebApplication2/WebApplication2.csproj"
 COPY . .
 WORKDIR "/src/WebApplication2"
+RUN dotnet restore 
 RUN dotnet build "WebApplication2.csproj" -c Release -o /app/build
 
 FROM build AS publish
