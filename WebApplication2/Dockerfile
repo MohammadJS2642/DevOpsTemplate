@@ -16,7 +16,7 @@ ENV URL="https://nuget.pkg.github.com/MohammadJS2642/index.json"
 
 #COPY ["nuget.config", "."]
 COPY ["packages.lock.json", "WebApplication2/"]
-RUN dotnet nuget add source --username $USERNAME --name github $URL
+RUN dotnet nuget add source --username $USERNAME --password $PASS --name github $URL
 #RUN dotnet nuget locals all --clear
 RUN dotnet nuget list source
 COPY ["WebApplication2.csproj", "WebApplication2/"]
