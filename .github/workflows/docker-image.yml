@@ -33,6 +33,7 @@ jobs:
     - name: Build the Docker image
       with:
        secrets: "github_token=${{ secrets.GITHUB_TOKEN }}"
-      working-directory: ./
+       context: ./
+      #working-directory: ./
       run: docker build ./WebApplication2 --file ./WebApplication2/Dockerfile --tag my-image-name:$(date +%s)
       #run: docker build ./WebApplication2 --file ./WebApplication2/Dockerfile --tag my-image-name:$(date +%s)
