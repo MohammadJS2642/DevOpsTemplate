@@ -11,7 +11,7 @@ WORKDIR /src
 
 
 #ARG PASS
-ENV PASS=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
+ENV PASS=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
 ENV USERNAME=MohammadJS2642
 ENV URL="https://nuget.pkg.github.com/MohammadJS2642/index.json"
 
