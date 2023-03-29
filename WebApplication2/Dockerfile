@@ -10,7 +10,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 
 #ARG PASS
-ENV PASS=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
+ENV PASS=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
 ENV USERNAME=MohammadJS2642
 ENV URL="https://nuget.pkg.github.com/MohammadJS2642/index.json"
 
