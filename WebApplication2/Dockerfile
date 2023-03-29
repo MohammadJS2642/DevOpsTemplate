@@ -9,7 +9,7 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 
-ENV PASS=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
+ENV PASS=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
 ENV USERNAME=MohammadJS2642
 ENV URL="https://nuget.pkg.github.com/MohammadJS2642/index.json"
 
