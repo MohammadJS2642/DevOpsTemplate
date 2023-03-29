@@ -9,7 +9,7 @@ on:
 env:
   USERNAME: MohammadJS2642
   #PASS: ${{ secrets.GITHUB_TOKEN }}
-  PASS: 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
+  PASS: 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
   URL: https://nuget.pkg.github.com/MohammadJS2642/index.json
 
 jobs:
