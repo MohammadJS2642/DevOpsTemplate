@@ -8,7 +8,8 @@ on:
 
 env:
   USERNAME: MohammadJS2642
-  PASS: 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
+  PASS: ${{ secrets.GITHUB_TOKEN }}
+  #PASS: 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
   URL: https://nuget.pkg.github.com/MohammadJS2642/index.json
 
 jobs:
