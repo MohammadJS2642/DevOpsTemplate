@@ -10,6 +10,7 @@ env:
   USERNAME: MohammadJS2642
   PASS: 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
   URL: https://nuget.pkg.github.com/MohammadJS2642/index.json
+  GITHUBTOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
 
