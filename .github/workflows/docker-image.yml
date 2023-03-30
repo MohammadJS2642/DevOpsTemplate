@@ -32,7 +32,7 @@ jobs:
     #  run: dotnet add "WebApplication2.csproj" package MyPackageDevelopmentPackage --version 0.1.30
 
     - name: Build the Docker image
-      uses: docker build ./WebApplication2 --file ./WebApplication2/Dockerfile --tag my-image-name:$(date +%s)
+      uses: docker/build-push-action@v4
       with:
         context: ./
         dockerfile: ./
