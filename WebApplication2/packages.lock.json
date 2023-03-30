@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "dependencies": {
+    "net6.0": {
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+        "type": "Direct",
+        "requested": "[1.17.0, )",
+        "resolved": "1.17.0",
+        "contentHash": "gfDtAL1WhkjbRdbZlt/ZeQYCbgRpNCZCGj+yeqHObsNFRDHjq8qZJOX9AyTxJpSRYMi9SJk7JDyAbbVYRgEhAA=="
+      },
+      "MyPackageDevelopmentPackage": {
+        "type": "Direct",
+        "requested": "[0.1.30, )",
+        "resolved": "0.1.30",
+        "contentHash": "1WWQXDjODNhfKq81gVDRVEL2ESAXmzohErk15jGNFCyJ7siVjyMGWu5aaTSDHOdFunHajbmOwXn4oXLdq9Tciw=="
+      }
+    }
+  }
+}
