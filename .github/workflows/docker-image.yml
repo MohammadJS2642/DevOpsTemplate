@@ -17,8 +17,9 @@ env:
 
 jobs:
   build:
-
+    
     runs-on: ubuntu-latest
+    container: mcr.microsoft.com/dotnet/aspnet:6.0
 
     steps:
     - uses: actions/checkout@v3
