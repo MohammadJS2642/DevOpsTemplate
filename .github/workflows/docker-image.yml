@@ -47,6 +47,9 @@ jobs:
     #  working-directory: ./WebApplication2
     #  run: dotnet add "WebApplication2.csproj" package MyPackageDevelopmentPackage --version 0.1.30
 
+    - name: ls
+      run: ls
+
     - name: Build the Docker image
       working-directory: ./
       run: docker build ./WebApplication2 --build-arg NUGETCONFIGFILE=./nuget.config --file ./WebApplication2/Dockerfile --tag my-image-name:$(date +%s)
