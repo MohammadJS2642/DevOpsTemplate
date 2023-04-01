@@ -34,8 +34,9 @@ jobs:
        restore-keys: |
          ${{ runner.os }}-nuget-
 
-    - name: Add nuget.config
-      run: dotnet nuget add source --username MohammadJS2642 --p ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/MohammadJS2642/index.json"
+    #- name: Add nuget.config
+    #  run: dotnet nuget add source --username MohammadJS2642 -p ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/MohammadJS2642/index.json"
+
     #- name: Add Packages
     #  working-directory: ./WebApplication2
     #  run: dotnet add "WebApplication2.csproj" package MyPackageDevelopmentPackage --version 0.1.30
