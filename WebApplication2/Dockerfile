@@ -14,6 +14,8 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 
 WORKDIR /src
 
+ARG NUGETCONFIGFILE
+
 ENV PASS=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
 ENV USERNAME=MohammadJS2642
 ENV URL="https://nuget.pkg.github.com/MohammadJS2642/index.json"
@@ -25,7 +27,7 @@ ENV URL="https://nuget.pkg.github.com/MohammadJS2642/index.json"
 RUN dotnet nuget list source
 COPY ["WebApplication2.csproj", "WebApplication2/"]
 #RUN dotnet restore "WebApplication2/WebApplication2.csproj" --configfile "WebApplication2/nuget.config"
-RUN dotnet restore "WebApplication2/WebApplication2.csproj"
+RUN dotnet restore "WebApplication2/WebApplication2.csproj" --configfile $NUGETCONFIGFILE
 COPY . .
 
 WORKDIR "/src/WebApplication2"
