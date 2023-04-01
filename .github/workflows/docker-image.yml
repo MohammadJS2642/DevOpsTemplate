@@ -6,6 +6,8 @@ on:
   pull_request:
     branches: [ "master" ]
 
+# added to read from github repository
+#environment: someName
 env:
   USERNAME: MohammadJS2642
   #PASS: ${{ secrets.GITHUB_TOKEN }}
@@ -47,4 +49,4 @@ jobs:
 
     - name: Build the Docker image
       working-directory: ./
-      run: docker build ./WebApplication2 --file ./WebApplication2/Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build ./WebApplication2 --build-args ./nuget.config --file ./WebApplication2/Dockerfile --tag my-image-name:$(date +%s)
