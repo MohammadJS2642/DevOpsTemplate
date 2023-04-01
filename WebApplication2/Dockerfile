@@ -7,8 +7,10 @@ EXPOSE 80
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-RUN --mount=type=secret,id=github_token \
-  cat /run/secrets/github_token
+
+#RUN --mount=type=secret,id=github_token \
+  #cat /run/secrets/github_token
+#
 
 WORKDIR /src
 
