@@ -29,8 +29,6 @@ jobs:
           ${{ runner.os }}-nuget-
     - name: Add nuget.config to path
       run: cp ./nuget.config ~/.nuget/NuGet/NuGet.Config
-    - name: Add nuget.config
-      run: dotnet nuget add source --username MohammadJS2642 -p ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/MohammadJS2642/index.json"
     - name: Build the Docker image
       working-directory: ./
       run: docker build ./WebApplication2 --build-arg NUGETCONFIGFILE=./nuget.config --file ./WebApplication2/Dockerfile --tag my-image-name:$(date +%s)
