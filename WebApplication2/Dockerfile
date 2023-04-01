@@ -26,6 +26,7 @@ ENV URL="https://nuget.pkg.github.com/MohammadJS2642/index.json"
 #RUN dotnet nuget add source --username $USERNAME -p $PASS --store-password-in-clear-text --name github $URL
 RUN dotnet nuget list source
 COPY ["WebApplication2.csproj", "WebApplication2/"]
+RUN ["cat",$NUGETCONFIGFILE]
 #RUN dotnet restore "WebApplication2/WebApplication2.csproj" --configfile "WebApplication2/nuget.config"
 RUN dotnet restore "WebApplication2/WebApplication2.csproj" --configfile $NUGETCONFIGFILE
 COPY . .
