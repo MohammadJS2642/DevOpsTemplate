@@ -11,7 +11,7 @@ WORKDIR /src
 
 COPY ["nuget.config", "."]
 #COPY ["packages.lock.json", "WebApplication2/"]
-COPY ["./WebApplication2/WebApplication2.csproj", "WebApplication2/"]
+COPY [".\WebApplication2\WebApplication2.csproj", "WebApplication2/"]
 RUN dotnet restore "WebApplication2/WebApplication2.csproj" --configfile "./nuget.config"
 COPY . .
 COPY ./WebApplication2 ./WebApplication2 
