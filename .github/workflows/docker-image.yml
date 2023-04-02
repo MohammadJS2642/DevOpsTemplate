@@ -8,10 +8,10 @@ on:
 
 # added to read from github repository
 #environment: someName
-env:
-  USERNAME: MohammadJS2642
-  URL: https://nuget.pkg.github.com/MohammadJS2642/index.json
-  GITHUBTOKEN: ${{ secrets.GITHUB_READ_PACKAGE }}
+#env:
+#  USERNAME: MohammadJS2642
+#  URL: https://nuget.pkg.github.com/MohammadJS2642/index.json
+#  GITHUBTOKEN: ${{ secrets.GITHUB_READ_PACKAGE }}
 
 jobs:
   build:
@@ -35,4 +35,4 @@ jobs:
     #  run: cp ./nuget.config ~/.nuget/NuGet/NuGet.Config
     - name: Build the Docker image
       working-directory: ./
-      run: docker build ./ --build-arg AUTH=GITHUBTOKEN --file ./Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build ./ --file ./Dockerfile --tag my-image-name:$(date +%s)
