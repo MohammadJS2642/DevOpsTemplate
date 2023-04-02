@@ -24,8 +24,6 @@ jobs:
          source-url: $URL
       env:
         NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-    - name: enable nuget sources
-      run: dotnet nuget list source
     - name: Add Nuget.Config file to cache
       uses: actions/cache@v3
       with:
@@ -33,10 +31,8 @@ jobs:
         key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
         restore-keys: |
           ${{ runner.os }}-nuget-
-    - name: Add nuget.config to path
-      run: cp ./nuget.config ~/.nuget/NuGet/NuGet.Config
-    - name: ls
-      run: ls
+    #- name: Add nuget.config to path
+    #  run: cp ./nuget.config ~/.nuget/NuGet/NuGet.Config
     - name: Build the Docker image
       working-directory: ./
       run: docker build ./ --build-arg AUTH=GITHUBTOKEN --file ./Dockerfile --tag my-image-name:$(date +%s)
