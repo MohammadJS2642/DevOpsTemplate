@@ -25,6 +25,9 @@ COPY ["packages.lock.json", "WebApplication2/"]
 #RUN dotnet nuget locals all --clear
 RUN dotnet nuget add source --username $USERNAME -p $AUTH --store-password-in-clear-text --name github $URL
 RUN dotnet nuget list source
+RUN dotnet nuget disable source github
+RUN dotnet nuget enable source github
+
 COPY ["WebApplication2.csproj", "WebApplication2/"]
 #RUN dotnet restore "WebApplication2/WebApplication2.csproj" --configfile "WebApplication2/nuget.config"
 RUN dotnet restore "WebApplication2/WebApplication2.csproj"
