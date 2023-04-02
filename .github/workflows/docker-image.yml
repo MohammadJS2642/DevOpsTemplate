@@ -11,7 +11,7 @@ on:
 env:
   USERNAME: MohammadJS2642
   URL: https://nuget.pkg.github.com/MohammadJS2642/index.json
-  GITHUBTOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GITHUBTOKEN: ${{ secrets.GITHUB_READ_PACKAGE }}
 
 jobs:
   build:
@@ -37,4 +37,4 @@ jobs:
       run: cp ./nuget.config ~/.nuget/NuGet/NuGet.Config
     - name: Build the Docker image
       working-directory: ./
-      run: docker build ./WebApplication2 --build-arg NUGETCONFIGFILE=./nuget.config --file ./WebApplication2/Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build ./WebApplication2 --build-arg AUTH=GITHUBTOKEN --file ./WebApplication2/Dockerfile --tag my-image-name:$(date +%s)
