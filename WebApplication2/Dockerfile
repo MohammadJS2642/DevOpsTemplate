@@ -12,6 +12,7 @@ WORKDIR /src
 #ARG pass
 
 COPY "WebApplication1_Solution.sln" "WebApplication1_Solution.sln"
+COPY "docker-compose.dcproj" "docker-compose.dcproj"
 #COPY ["nuget.config", "nuget.config"]
 
 #COPY ["nuget.config", "WebApplication2/"]
