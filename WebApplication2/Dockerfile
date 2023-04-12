@@ -9,7 +9,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 
 WORKDIR /src
 
-ARG pass
+#ARG pass
 
 COPY "WebApplication1_Solution.sln" "WebApplication1_Solution.sln"
 #COPY ["nuget.config", "nuget.config"]
@@ -19,9 +19,10 @@ COPY "WebApplication1_Solution.sln" "WebApplication1_Solution.sln"
 COPY ["WebApplication2/WebApplication2.csproj", "WebApplication2/"]
 #RUN dotnet restore "WebApplication2/WebApplication2.csproj" --configfile "./nuget.config"
 COPY . .
+RUN ["rm", "./nuget.config"]
 COPY "./WebApplication2/" "./WebApplication2/"
-RUN dotnet new nugetconfig --force
-RUN dotnet nuget add source --username $USERNAME --store-password-in-clear-text -p $pass  --name github "https://nuget.pkg.github.com/mohammadjs2642/index.json"
+#RUN dotnet new nugetconfig --force
+#RUN dotnet nuget add source --username $USERNAME --store-password-in-clear-text -p $pass  --name github "https://nuget.pkg.github.com/mohammadjs2642/index.json"
 #RUN dotnet restore ".\WebApplication1_Solution.sln"
 
 WORKDIR "/src/WebApplication2"
