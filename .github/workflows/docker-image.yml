@@ -43,4 +43,4 @@ jobs:
     #  run: dotnet nuget list source
     - name: Build the Docker image
       working-directory: ./
-      run: docker build . --file ./WebApplication2\Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --file ./WebApplication2/Dockerfile --tag my-image-name:$(date +%s)
