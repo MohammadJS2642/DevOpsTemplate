@@ -23,7 +23,7 @@ RUN ["rm", "./nuget.config"]
 COPY "./WebApplication2/" "./WebApplication2/"
 #RUN dotnet new nugetconfig --force
 #RUN dotnet nuget add source --username $USERNAME --store-password-in-clear-text -p $pass  --name github "https://nuget.pkg.github.com/mohammadjs2642/index.json"
-RUN dotnet restore ".\WebApplication1_Solution.sln"
+RUN dotnet restore .\WebApplication1_Solution.sln
 
 WORKDIR "/src/WebApplication2"
 RUN dotnet build "WebApplication2.csproj" -c Release -o /app/build
