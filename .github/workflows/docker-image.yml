@@ -15,8 +15,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: copy nuget
-      run: mv nuget_action.config nuget.config
     - name: Build the Docker image
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: docker build . --file ./WebApplication2/Dockerfile --tag my-image-name:$(date +%s)
